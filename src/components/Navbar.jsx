@@ -13,31 +13,51 @@ const Navbar = () => {
           className="md:hidden text-white focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          <img src={data.menu_icon} alt="menu" className="w-8 h-8 md:hidden" />
+          <img
+            src={isMenuOpen ? data.cross_icon : data.menu_icon}
+            alt={isMenuOpen ? 'close_menu' : 'menu_icon'}
+            className="w-8 h-8 md:hidden text-black"
+          />
         </button>
         <ul className="hidden md:flex gap-6 md:gap-8 list-none m-0 p-0">
-          <li className="cursor-pointer text-white text-base md:text-xl">Home</li>
-          <li className="cursor-pointer text-white text-base md:text-xl">About</li>
-          <li className="cursor-pointer text-white text-base md:text-xl">Projects</li>
-          <li className="cursor-pointer text-white text-base md:text-xl">Testimonials</li>
+          <li className="cursor-pointer text-white text-base md:text-xl"><a href='#About'>Home</a></li>
+          <li className="cursor-pointer text-white text-base md:text-xl"><a href='#About'>About</a></li>
+          <li className="cursor-pointer text-white text-base md:text-xl"><a href='#About'>Projects</a></li>
+          <li className="cursor-pointer text-white text-base md:text-xl"><a href='#About'>Testimonials</a></li>
         </ul>
         <button className="hidden md:flex bg-gray-100 text-black px-6 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-base font-medium transition duration-300 hover:bg-blue-700">
           Sign Up
-          <img src={data.menu_icon} alt="arrow" className="ml-2 max-h-4 md:max-h-6 md:hidden" />
         </button>
       </div>
-      
+
       {isMenuOpen && (
-        <div className="absolute top-16 left-0 w-full bg-black text-white flex flex-col items-center py-4 z-20">
-          <ul className="flex flex-col gap-4 list-none m-0 p-0">
-            <li className="cursor-pointer text-white text-lg" onClick={() => setIsMenuOpen(false)}>Home</li>
-            <li className="cursor-pointer text-white text-lg" onClick={() => setIsMenuOpen(false)}>About</li>
-            <li className="cursor-pointer text-white text-lg" onClick={() => setIsMenuOpen(false)}>Projects</li>
-            <li className="cursor-pointer text-white text-lg" onClick={() => setIsMenuOpen(false)}>Testimonials</li>
+        <div className="fixed inset-0 bg-white text-black flex flex-col items-center justify-center z-20">
+          <ul className="flex flex-col gap-6 list-none m-0 p-0">
+            <li
+              className="cursor-pointer text-black text-lg"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Home
+            </li>
+            <li
+              className="cursor-pointer text-black text-lg"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About
+            </li>
+            <li
+              className="cursor-pointer text-black text-lg"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Projects
+            </li>
+            <li
+              className="cursor-pointer text-black text-lg"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Testimonials
+            </li>
           </ul>
-          <button className="bg-gray-100 text-white px-6 py-2 rounded-full text-sm font-medium mt-4 transition duration-300">
-            Sign Up
-          </button>
         </div>
       )}
     </div>
