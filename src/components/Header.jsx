@@ -1,7 +1,8 @@
 import './header.css';
 import Navbar from './Navbar';
+import { motion } from "framer-motion"
 
-const Header = () => {
+const Header = () => { 
   return (
     <div className="header relative min-h-screen">
       <Navbar />
