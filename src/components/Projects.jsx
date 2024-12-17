@@ -69,12 +69,12 @@ const Projects = () => {
       </div>
 
       <div className="overflow-hidden m-4 sm:m-8 p-4 sm:p-6">
-        <div
-          className="flex gap-6 sm:gap-8 transition-transform duration-500 ease-in-out"
-          style={{
-            transform: `translateX(-${(currentIndex * 100) / cardsToShow}%)`,
-          }}
-        >
+      <div
+      className="flex gap-6 sm:gap-8 transition-transform duration-500 ease-in-out"
+      style={{
+      transform: `translateX(-${currentIndex * (cardsToShow === 1 ? 110 : 100) / cardsToShow}%)`,
+     }}
+    >
           {projectsData.map((project, index) => (
             <div
               key={index}
