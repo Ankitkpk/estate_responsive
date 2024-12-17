@@ -16,11 +16,10 @@ const Projects = () => {
       prevIndex === 0 ? projectsData.length - 1 : prevIndex - 1
     );
   };
-
   useEffect(() => {
     const updateCardsToShow = () => {
       if (window.innerWidth >= 1024) {
-        setCardsToShow(3); 
+        setCardsToShow(3);
       } else if (window.innerWidth >= 768) {
         setCardsToShow(2); 
       } else {
